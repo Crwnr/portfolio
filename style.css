@@ -22,3 +22,16 @@ p{
     text-align: center;
     color: #333;
 }
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+padding: 20px;
+background-color: #ffffff;
+border-bottom: 1px solid #ccc;
+}
+
+.logo {
+    height: 48px;
+    width: auto;
+}
