@@ -8,10 +8,11 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Navigation oben -->
-  <header class="nav">
+
+  <!-- Navigation -->
+  <header class="nav fade-in">
     <div class="nav-left">
-      <img src="logo.png" alt="Logo" class="nav-logo" />
+      <img src="logo.svg" alt="Logo" class="nav-logo" />
       <span class="nav-brand">denisl.dev</span>
     </div>
     <nav class="nav-links">
@@ -22,8 +23,8 @@
   </header>
 
   <main>
-    <!-- Hero-Bereich (wie Apple Landing Page) -->
-    <section class="hero">
+    <!-- Hero -->
+    <section class="hero fade-in">
       <p class="hero-eyebrow">Informatik Student · Saarbrücken</p>
       <h1 class="hero-title">Hi, ich bin Denis.</h1>
       <p class="hero-subtitle">
@@ -37,40 +38,34 @@
     </section>
 
     <!-- Projekte -->
-    <section id="projects" class="section">
+    <section id="projects" class="section fade-in">
       <h2 class="section-title">Ausgewählte Projekte</h2>
       <div class="grid">
         <article class="card">
           <h3 class="card-title">Projektname 1</h3>
-          <p class="card-text">
-           Project to be continued.
-          </p>
+          <p class="card-text">Project to be continued.</p>
           <p class="card-meta">Technologien: HTML · CSS · JS</p>
         </article>
 
         <article class="card">
           <h3 class="card-title">Projektname 2</h3>
-          <p class="card-text">
-            Noch ein Project to be continued.
-          </p>
+          <p class="card-text">Noch ein Project to be continued.</p>
           <p class="card-meta">Technologien: React · API</p>
         </article>
       </div>
     </section>
 
     <!-- Über mich -->
-    <section id="about" class="section">
+    <section id="about" class="section fade-in">
       <h2 class="section-title">Über mich</h2>
       <p class="section-text">
-        Ich studiere Informatik an der Universität des Saarlandes und
-        interessiere mich besonders für Webentwicklung und saubere
-        Software-Architektur. Momentan arbeite ich an verschiedenen
-        Projekten, mit denen ich mein Portfolio aufbaue.
+        Ich studiere Informatik an der Universität des Saarlandes und interessiere mich für Webentwicklung und saubere
+        Software-Architektur. Momentan arbeite ich an Projekten, mit denen ich mein Portfolio aufbaue.
       </p>
     </section>
 
     <!-- Kontakt -->
-    <section id="contact" class="section">
+    <section id="contact" class="section fade-in">
       <h2 class="section-title">Kontakt</h2>
       <p class="section-text">
         Lust auf ein Projekt, eine Zusammenarbeit oder Feedback zu meinem Code?
@@ -81,16 +76,29 @@
         <a href="#" target="_blank">LinkedIn</a>
       </div>
     </section>
+
   </main>
 
-  <footer class="footer">
+  <footer class="footer fade-in">
     <small>© <span id="year"></span> Denis. Alle Rechte vorbehalten.</small>
   </footer>
 
+  <!-- Script -->
   <script>
-    // Setzt automatisch das aktuelle Jahr im Footer
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
   </script>
+
 </body>
 </html>
 
