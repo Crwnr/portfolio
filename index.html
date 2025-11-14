@@ -1,19 +1,95 @@
 <!DOCTYPE html>
-<html lang="de"></html>
+<html lang="de">
 <head>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta charset="UTF-8">
-    <title>Mein Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Denis – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="header">
-  <img src="logo.PNG" alt="Logo" class="logo">
-  <h1>Mein Portfolio</h1>
-</header>
-    <div class="container">
+  <!-- Navigation oben -->
+  <header class="nav">
+    <div class="nav-left">
+      <img src="logo.PNG" alt="Logo" class="nav-logo" />
+      <span class="nav-brand">denisl.dev</span>
     </div>
-    <h1>Welcome to my CV</h1>
-    <p>Hallo</p>
+    <nav class="nav-links">
+      <a href="#projects">Projekte</a>
+      <a href="#about">Über mich</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero-Bereich (wie Apple Landing Page) -->
+    <section class="hero">
+      <p class="hero-eyebrow">Informatik Student · Saarbrücken</p>
+      <h1 class="hero-title">Hi, ich bin Denis.</h1>
+      <p class="hero-subtitle">
+        Ich entwickle klare, fokussierte Webanwendungen – mit Liebe zu Details
+        und Performance.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">Meine Projekte</a>
+        <a href="#contact" class="btn-secondary">Kontakt aufnehmen</a>
+      </div>
+    </section>
+
+    <!-- Projekte -->
+    <section id="projects" class="section">
+      <h2 class="section-title">Ausgewählte Projekte</h2>
+      <div class="grid">
+        <article class="card">
+          <h3 class="card-title">Projektname 1</h3>
+          <p class="card-text">
+            Kurze 1–2 Sätze, was es macht und warum es interessant ist.
+          </p>
+          <p class="card-meta">Technologien: HTML · CSS · JS</p>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Projektname 2</h3>
+          <p class="card-text">
+            Noch ein Projekt – hier kommt später dein echter Inhalt rein.
+          </p>
+          <p class="card-meta">Technologien: React · API</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Über mich -->
+    <section id="about" class="section">
+      <h2 class="section-title">Über mich</h2>
+      <p class="section-text">
+        Ich studiere Informatik an der Universität des Saarlandes und
+        interessiere mich besonders für Webentwicklung und saubere
+        Software-Architektur. Momentan arbeite ich an verschiedenen
+        Projekten, mit denen ich mein Portfolio aufbaue.
+      </p>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="contact" class="section">
+      <h2 class="section-title">Kontakt</h2>
+      <p class="section-text">
+        Lust auf ein Projekt, eine Zusammenarbeit oder Feedback zu meinem Code?
+      </p>
+      <div class="contact-links">
+        <a href="mailto:deine.mail@beispiel.de">E-Mail</a>
+        <a href="https://github.com/DEIN_GITHUB" target="_blank">GitHub</a>
+        <a href="#" target="_blank">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> Denis. Alle Rechte vorbehalten.</small>
+  </footer>
+
+  <script>
+    // Setzt automatisch das aktuelle Jahr im Footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
